@@ -1,6 +1,6 @@
 # Intro
 
-This is not a blog. It's more like a recipe for becoming a demigod.  
+This is not a blog. It's more like a recipe for becoming a mage.  
 A grimoire.  
 
 
