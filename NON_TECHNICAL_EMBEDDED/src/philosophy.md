@@ -1,0 +1,2 @@
+1. No/Minimal Proprietary policy. If we have a choice to make, we always go open-source. Be it software or ISA designs. We do not need dependencies with blackholes. We also need to have the freedome to go our own ways(Technically)
+2.  

@@ -1,0 +1,7 @@
+- RiscV Runtime
+- Mdbook - SEO
+- Write niche Riscv Drivers
+- Wasm bare metal integration
+- The Embedded Rust Books
+  - The Book Itself : https://github.com/rust-embedded/book
+  - [The Discovery Book](https://github.com/rust-embedded/discovery)

@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="mem.html"><strong aria-hidden="true">1.</strong> Mem</a></li><li class="chapter-item expanded affix "><li class="part-title">Chapter 1 : Intro</li><li class="chapter-item expanded "><a href="chaper_1_notes.html" class="active"><strong aria-hidden="true">2.</strong> chaper_1_notes</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="mem.html"><strong aria-hidden="true">1.</strong> Mem</a></li><li class="chapter-item expanded affix "><li class="part-title">Chapter 1 : Intro</li><li class="chapter-item expanded "><a href="chaper_1_notes.html" class="active"><strong aria-hidden="true">2.</strong> chaper_1_notes</a></li><li class="chapter-item expanded "><a href="setup_procedures.html"><strong aria-hidden="true">3.</strong> Setups</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">3.1.</strong> Tools</a></li><li class="chapter-item expanded "><a href="no_std_and_runtimes.html"><strong aria-hidden="true">3.2.</strong> No_std and Runtimes</a></li><li class="chapter-item expanded "><a href="udev_rules.html"><strong aria-hidden="true">3.3.</strong> Udev Rules</a></li><li class="chapter-item expanded "><a href="debugging_setup.html"><strong aria-hidden="true">3.4.</strong> debugging</a></li><li class="chapter-item expanded "><a href="abstracting_the_board.html"><strong aria-hidden="true">3.5.</strong> Abstracting the Board</a></li></ol></li><li class="chapter-item expanded "><a href="choosing_hardware.html"><strong aria-hidden="true">4.</strong> Choosing Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="micro_controller_vs_general_purpose_computer.html"><strong aria-hidden="true">4.1.</strong> Micro_controller vs General Purpose Computer</a></li></ol></li><li class="chapter-item expanded "><a href="communication.html"><strong aria-hidden="true">5.</strong> communication</a></li><li class="chapter-item expanded "><a href="resources.html"><strong aria-hidden="true">6.</strong> Resources</a></li><li class="chapter-item expanded "><a href="problems_facing_embedded_devs.html"><strong aria-hidden="true">7.</strong> Problems facing Embedded Devs</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Zero_power Commuincation</div></li><li class="chapter-item expanded "><a href="ISAs.html"><strong aria-hidden="true">9.</strong> ISAs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="floating_points_in_ISAs.html"><strong aria-hidden="true">9.1.</strong> Floating Point Precisions in ISAs</a></li><li class="chapter-item expanded "><a href="flash_memory.html"><strong aria-hidden="true">9.2.</strong> Flash Memory</a></li><li class="chapter-item expanded "><a href="ram.html"><strong aria-hidden="true">9.3.</strong> RAM</a></li><li class="chapter-item expanded "><a href="GPIO_pins.html"><strong aria-hidden="true">9.4.</strong> GPIO Pins</a></li><li class="chapter-item expanded "><a href="accelerometer.html"><strong aria-hidden="true">9.5.</strong> Accelerometer</a></li><li class="chapter-item expanded "><a href="gyroscope.html"><strong aria-hidden="true">9.6.</strong> Gyroscope</a></li><li class="chapter-item expanded "><a href="magnetometer.html"><strong aria-hidden="true">9.7.</strong> Magnetometer</a></li><li class="chapter-item expanded "><a href="stupid_cautions.html"><strong aria-hidden="true">9.8.</strong> Stupid Cautions</a></li></ol></li><li class="chapter-item expanded "><a href="debugging.html"><strong aria-hidden="true">10.</strong> Debugging</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="jtag.html"><strong aria-hidden="true">10.1.</strong> JTAG</a></li></ol></li><li class="chapter-item expanded "><a href="tools_tutorials.html"><strong aria-hidden="true">11.</strong> Tools_tutorials</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="openocd.html"><strong aria-hidden="true">11.1.</strong> openocd</a></li></ol></li><li class="chapter-item expanded "><a href="magic_and_incantations.html"><strong aria-hidden="true">12.</strong> Magic and incantations</a></li><li class="chapter-item expanded "><a href="technical_journey.html"><strong aria-hidden="true">13.</strong> Technical Journey</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -149,7 +149,49 @@ Though this view is not absolute.</p>
 <li>slow cpus to save power</li>
 <li>lack of support for certain peripherals.</li>
 </ol>
-<p>[incant] Now with this constrained environment, the system might not support certain peripherals or certain software. Such a situation forces the developers to come up with really unique APIs. Can modular wasm solve anything here? What is the problem/  unique APIs kill the dream for a programmable world.  </p>
+<p>[incant] Now with this constrained environment, the system might not support certain peripherals or certain software. Such a situation forces the developers to come up with really unique APIs. Can modular wasm solve anything here? What is the problem/  unique APIs kill the dream for a programmable world.</p>
+<p>JTAG - a physical interface to help you interact with the microprocessor using developmet tools like debuggers and testers</p>
+<h2 id="problems"><a class="header" href="#problems">Problems</a></h2>
+<ol>
+<li>Cross development is hard and somehow incomplete
+<ol>
+<li>compiling</li>
+<li>testing </li>
+<li>Debugging</li>
+</ol>
+</li>
+<li>dsds</li>
+</ol>
+<h2 id="random"><a class="header" href="#random">Random</a></h2>
+<p>Yes we are in IoT, but should that microwave be connected to the net?<br />
+Which domains are dependent on IoT?<br />
+Which domain has products that churn the market?<br />
+Which domain is iteresting to you?</p>
+<h2 id="domains"><a class="header" href="#domains">Domains</a></h2>
+<ul>
+<li><strong>Industrial IoT (IIoT)</strong>: Focuses on improving efficiency and automation in industries through sensors, data analytics, and connectivity. Examples include predictive maintenance in manufacturing and asset tracking in logistics.</li>
+<li><strong>Healthcare IoT</strong>: Involves wearable devices, remote patient monitoring, and smart medical equipment to improve patient care and health outcomes.</li>
+<li><strong>IoT in Energy Management:</strong> Includes smart grids, energy monitoring systems, and devices to optimize energy consumption in homes, buildings, and industries.</li>
+<li><strong>Swarm contruction robotics</strong> - Like Bill-E</li>
+<li><strong>IoT in Space Exploration</strong>: Involves satellite communication, remote planetary exploration, and data collection from space-based sensors.</li>
+<li><strong>Millitary</strong></li>
+</ul>
+<h2 id="why-rust-now"><a class="header" href="#why-rust-now">Why Rust now?</a></h2>
+<ul>
+<li>asm itegration</li>
+<li>wasm integration</li>
+<li>high level to be even be used in cloud applications... unlike C</li>
+</ul>
+<h2 id="communication"><a class="header" href="#communication">Communication</a></h2>
+<ul>
+<li></li>
+<li>Https </li>
+</ul>
+<h1 id="discovery-book"><a class="header" href="#discovery-book">Discovery Book</a></h1>
+<p>SoC == microcontroller<br />
+sensors ==&gt; SoC ==&gt; Actuators(implementors of code eg arms)</p>
+<p>SoC != General purpose Computer(eg rasberry-Pi). SoC is more specialized, might have lesser number of componets, less cost, less resource intensive.<br />
+Power consumption. Most microcontrollers consume a fraction of the power of a full blown processor. For applications which run on batteries, that makes a huge difference. </p>
 
                     </main>
 
@@ -159,6 +201,9 @@ Though this view is not absolute.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next" href="setup_procedures.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -170,6 +215,9 @@ Though this view is not absolute.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next" href="setup_procedures.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

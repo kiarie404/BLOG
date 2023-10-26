@@ -1,3 +1,17 @@
+
+
+- [ ] Continuously re-organize blog
+- [ ] Journal stuff
+
+
+
+
+
+
+
+
+
+
 - Books {technical, Heroes/men_before }
   - iota
   - 

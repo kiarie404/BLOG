@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="mem.html"><strong aria-hidden="true">1.</strong> Mem</a></li><li class="chapter-item expanded affix "><li class="part-title">Chapter 1 : Intro</li><li class="chapter-item expanded "><a href="chaper_1_notes.html"><strong aria-hidden="true">2.</strong> chaper_1_notes</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="mem.html"><strong aria-hidden="true">1.</strong> Mem</a></li><li class="chapter-item expanded affix "><li class="part-title">Chapter 1 : Intro</li><li class="chapter-item expanded "><a href="chaper_1_notes.html"><strong aria-hidden="true">2.</strong> chaper_1_notes</a></li><li class="chapter-item expanded "><a href="setup_procedures.html"><strong aria-hidden="true">3.</strong> Setups</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">3.1.</strong> Tools</a></li><li class="chapter-item expanded "><a href="no_std_and_runtimes.html"><strong aria-hidden="true">3.2.</strong> No_std and Runtimes</a></li><li class="chapter-item expanded "><a href="udev_rules.html"><strong aria-hidden="true">3.3.</strong> Udev Rules</a></li><li class="chapter-item expanded "><a href="debugging_setup.html"><strong aria-hidden="true">3.4.</strong> debugging</a></li><li class="chapter-item expanded "><a href="abstracting_the_board.html"><strong aria-hidden="true">3.5.</strong> Abstracting the Board</a></li></ol></li><li class="chapter-item expanded "><a href="choosing_hardware.html"><strong aria-hidden="true">4.</strong> Choosing Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="micro_controller_vs_general_purpose_computer.html"><strong aria-hidden="true">4.1.</strong> Micro_controller vs General Purpose Computer</a></li></ol></li><li class="chapter-item expanded "><a href="communication.html"><strong aria-hidden="true">5.</strong> communication</a></li><li class="chapter-item expanded "><a href="resources.html"><strong aria-hidden="true">6.</strong> Resources</a></li><li class="chapter-item expanded "><a href="problems_facing_embedded_devs.html"><strong aria-hidden="true">7.</strong> Problems facing Embedded Devs</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Zero_power Commuincation</div></li><li class="chapter-item expanded "><a href="ISAs.html"><strong aria-hidden="true">9.</strong> ISAs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="floating_points_in_ISAs.html"><strong aria-hidden="true">9.1.</strong> Floating Point Precisions in ISAs</a></li><li class="chapter-item expanded "><a href="flash_memory.html"><strong aria-hidden="true">9.2.</strong> Flash Memory</a></li><li class="chapter-item expanded "><a href="ram.html"><strong aria-hidden="true">9.3.</strong> RAM</a></li><li class="chapter-item expanded "><a href="GPIO_pins.html"><strong aria-hidden="true">9.4.</strong> GPIO Pins</a></li><li class="chapter-item expanded "><a href="accelerometer.html"><strong aria-hidden="true">9.5.</strong> Accelerometer</a></li><li class="chapter-item expanded "><a href="gyroscope.html"><strong aria-hidden="true">9.6.</strong> Gyroscope</a></li><li class="chapter-item expanded "><a href="magnetometer.html"><strong aria-hidden="true">9.7.</strong> Magnetometer</a></li><li class="chapter-item expanded "><a href="stupid_cautions.html"><strong aria-hidden="true">9.8.</strong> Stupid Cautions</a></li></ol></li><li class="chapter-item expanded "><a href="debugging.html"><strong aria-hidden="true">10.</strong> Debugging</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="jtag.html"><strong aria-hidden="true">10.1.</strong> JTAG</a></li></ol></li><li class="chapter-item expanded "><a href="tools_tutorials.html"><strong aria-hidden="true">11.</strong> Tools_tutorials</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="openocd.html"><strong aria-hidden="true">11.1.</strong> openocd</a></li></ol></li><li class="chapter-item expanded "><a href="magic_and_incantations.html"><strong aria-hidden="true">12.</strong> Magic and incantations</a></li><li class="chapter-item expanded "><a href="technical_journey.html"><strong aria-hidden="true">13.</strong> Technical Journey</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,7 +143,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="mem"><a class="header" href="#mem">Mem</a></h1>
-<p>This is a documentation of my journey while reading the book : &quot;Making Embedded Systems Design Patterns for Great Software by Elicia White&quot;<br />
+<p>This is a documentation of my journey while reading the book : &quot;Rust for the IoT- Joseph Faisal&quot;<br />
 Future me, this was once hard and fun... laugh all you want.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="chapter_1_notes"><a class="header" href="#chapter_1_notes">chapter_1_notes</a></h1>
 <p>An Embedded system is a system that has been purposefully built for a certain application. It is not a general purpose system.<br />
@@ -153,7 +153,633 @@ Though this view is not absolute.</p>
 <li>slow cpus to save power</li>
 <li>lack of support for certain peripherals.</li>
 </ol>
-<p>[incant] Now with this constrained environment, the system might not support certain peripherals or certain software. Such a situation forces the developers to come up with really unique APIs. Can modular wasm solve anything here? What is the problem/  unique APIs kill the dream for a programmable world.  </p>
+<p>[incant] Now with this constrained environment, the system might not support certain peripherals or certain software. Such a situation forces the developers to come up with really unique APIs. Can modular wasm solve anything here? What is the problem/  unique APIs kill the dream for a programmable world.</p>
+<p>JTAG - a physical interface to help you interact with the microprocessor using developmet tools like debuggers and testers</p>
+<h2 id="problems"><a class="header" href="#problems">Problems</a></h2>
+<ol>
+<li>Cross development is hard and somehow incomplete
+<ol>
+<li>compiling</li>
+<li>testing </li>
+<li>Debugging</li>
+</ol>
+</li>
+<li>dsds</li>
+</ol>
+<h2 id="random"><a class="header" href="#random">Random</a></h2>
+<p>Yes we are in IoT, but should that microwave be connected to the net?<br />
+Which domains are dependent on IoT?<br />
+Which domain has products that churn the market?<br />
+Which domain is iteresting to you?</p>
+<h2 id="domains"><a class="header" href="#domains">Domains</a></h2>
+<ul>
+<li><strong>Industrial IoT (IIoT)</strong>: Focuses on improving efficiency and automation in industries through sensors, data analytics, and connectivity. Examples include predictive maintenance in manufacturing and asset tracking in logistics.</li>
+<li><strong>Healthcare IoT</strong>: Involves wearable devices, remote patient monitoring, and smart medical equipment to improve patient care and health outcomes.</li>
+<li><strong>IoT in Energy Management:</strong> Includes smart grids, energy monitoring systems, and devices to optimize energy consumption in homes, buildings, and industries.</li>
+<li><strong>Swarm contruction robotics</strong> - Like Bill-E</li>
+<li><strong>IoT in Space Exploration</strong>: Involves satellite communication, remote planetary exploration, and data collection from space-based sensors.</li>
+<li><strong>Millitary</strong></li>
+</ul>
+<h2 id="why-rust-now"><a class="header" href="#why-rust-now">Why Rust now?</a></h2>
+<ul>
+<li>asm itegration</li>
+<li>wasm integration</li>
+<li>high level to be even be used in cloud applications... unlike C</li>
+</ul>
+<h2 id="communication"><a class="header" href="#communication">Communication</a></h2>
+<ul>
+<li></li>
+<li>Https </li>
+</ul>
+<h1 id="discovery-book"><a class="header" href="#discovery-book">Discovery Book</a></h1>
+<p>SoC == microcontroller<br />
+sensors ==&gt; SoC ==&gt; Actuators(implementors of code eg arms)</p>
+<p>SoC != General purpose Computer(eg rasberry-Pi). SoC is more specialized, might have lesser number of componets, less cost, less resource intensive.<br />
+Power consumption. Most microcontrollers consume a fraction of the power of a full blown processor. For applications which run on batteries, that makes a huge difference. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setups"><a class="header" href="#setups">Setups</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tools"><a class="header" href="#tools">Tools</a></h1>
+<h2 id="generic"><a class="header" href="#generic">Generic</a></h2>
+<ul>
+<li>
+<p>Rustup will help you install, modify and inquire toolchains. Master it.</p>
+</li>
+<li>
+<p>Master Cargo</p>
+</li>
+<li>
+<p>Cargo Binutils will help you integrate LLVM tools with cargo. nm, LLD(rust-lld), objdump, size, readobj. </p>
+</li>
+<li>
+<p>Just mess aroud with LLVM and GNU tools. You need them BAD.</p>
+</li>
+<li>
+<p>Cargo generate will help you pass templates to your team members</p>
+</li>
+</ul>
+<h2 id="specific"><a class="header" href="#specific">Specific</a></h2>
+<ul>
+<li>gdb-multiarch. (when actually debugging, refer to the specific gdb subset command eg arm-none-eabi-gdb)</li>
+<li>openocd (software that sits in between the GDB(in hosted environment) and Microcontroller-Debugger(in embedded environment))</li>
+<li>qemu-system-arm (this is not just Qemu)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="no-std-and-runtimes"><a class="header" href="#no-std-and-runtimes">no std and Runtimes</a></h1>
+<p>Turns out every language has a runtime. Who knew? Even C and Rust.<br />
+The Runtime takes care of things like panic handling, stack protection, order of functions called before main.</p>
+<p>Lib core is part of Std lib.<br />
+In Rust, the runtime is part of the std lib.</p>
+<p>The compiler can work without the lib core and stdlib. As long as you satisfy all the language items required by the compiler. If you check the lib-core code, you will see things labelled as language items. This is how the compiler knows the position of code that satisfies the behavior of Rust itself</p>
+<p>I have not understood the concept of <a href="https://manishearth.github.io/blog/2017/01/11/rust-tidbits-what-is-a-lang-item/?ref=ductile.systems">lang items</a>. Read about them <a href="https://manishearth.github.io/blog/2017/01/11/rust-tidbits-what-is-a-lang-item/?ref=ductile.systems">here</a></p>
+<p>I have not understood the Rust Runtime. I do not how they are intertwined with the C runtime. I really don't know. <a href="https://ductile.systems/rusts-runtime/">But this page has clues</a></p>
+<p>Anyway, when we stop depending on the std library...</p>
+<ol>
+<li>you have to include your own init code before main()</li>
+<li>you have to implement your own stack overflow protection mechanism</li>
+<li>You have to implement your own std fuctions.</li>
+<li>You may create your heap byte-allocator and iterface it with the Rust Alloc crate. That way you get to perform built-in Rust heap operations like Box Operations and vectors (use collections crate)</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="udev-rules"><a class="header" href="#udev-rules">Udev Rules</a></h1>
+<p>[to_add]</p>
+<p>In linux, everything is a file. Soo when devices are connected, commuication between them and other software is through files, These files get stored in the directory ; /dev/. For example the /dev/CPU, /dev/bus, /dev/hard-disk....<br />
+This fies are for communication purposes ONLY. They are NOT configuration files.</p>
+<p>To configure the devices, you use a software called 'user-space Device Manager' (udev). You can configure the names of a device, its unique oparameters, the permissions to be implemented, how clean=up happens after the device is unplugged...</p>
+<p>The actual configuration files get stored in the /etc/udev/rules.d/ directory</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="debugging"><a class="header" href="#debugging">debugging</a></h1>
+<p>If you are using an Emulator such as Qemu, You can follo this steps : </p>
+<ol>
+<li>Run the emulator under 2 necessary configs. The Emulator should start at a pause. The Emulator should listen for GDB messages at a specific port. For example : </li>
+<li>Run the GDB to debug a specific file. And make it send and receive messages from the same port as that specified by the Qemu emulator</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="abstracting-the-board"><a class="header" href="#abstracting-the-board">Abstracting the Board</a></h1>
+<p>Before controlling matter, you need to understand it, abstract it effectively and find a way to actuate the abstractions. The naming does not matter, only the intention of the abstraction is what matters.</p>
+<p><strong>PAC (Peripheral Access Crate)</strong><br />
+This library abstracts the registers and MMIO memory addresses in an intuitive way.<br />
+It may present the Registers as structs with sensible names, you do not have to worry about accessing addresses using hexdecimal notations and perform raw pointer operations... this makes your code more portable.<br />
+This crate does not expose functionalities of the hardware, it just gives you access_variables and the different methods of accessing and manipulating those access variables.</p>
+<p><strong>Micro-architecture Crate</strong><br />
+This crate abstracts the micro-controller itself. (Without the board). It abstract things like the ISA implementation, the inbuilt circuits like Timer, Interrupt controller, FPU, extensions.</p>
+<p>This crate is as low-level as the PAC... it is just the PAC abstracts peripherals while the MAC(Micro-architecture Crate) abstracts the MCU and its inbuilt circuits.</p>
+<p>Additionally, unlike the PAC, it exposes the different functinalities of the MCU such as interrupt handling mechanisms. </p>
+<p>MACs are typically provided by the MCU manufacturers</p>
+<p><strong>HAL (Hardware Abstraction Layer)</strong><br />
+This crate exposes the generic API for a piece of peripheral. It exposes functionality. It uses the PAC and MAC libraries as its building blocks.<br />
+The HAL is more generic than the MAC and PAC crates.</p>
+<p>For example, if we had the UART as our piece of hardware, then the PAC will expose the address 0x200_000 as the FIFO control register. The HAL register will then use that register variable to build the 'enable FIFO' function.</p>
+<p><strong>Peripheral Driver Crates</strong><br />
+This crate is a highly specific HAL for a certain piece of hardware/perioheral. This is no longer a generic HAL...it is a generic HAL + other new fuctionalities that are manufacturer-unique</p>
+<p><strong>Board Crate</strong><br />
+The board crate goes a step further at being ALL-encompassing. It tries to abstract the whole development board by combining the relevant PACs, MACs, HALs and Driver crates into one crate.</p>
+<p><strong>Utility Crates</strong><br />
+These crates may not directly interact with hardware but provide utility functions and data structures that can be helpful in embedded development. For example, crates for working with fixed-point arithmetic, bit manipulation, or data serialization.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="choosing-hardware"><a class="header" href="#choosing-hardware">Choosing Hardware</a></h1>
+<p>This section covers all matters hardware. Which Chips to use, which ISAs to use, when to use certain hardware... things like those. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="micro_controller-vs-general-purpose-computer"><a class="header" href="#micro_controller-vs-general-purpose-computer">Micro_controller vs General Purpose Computer</a></h1>
+<p>A microcontroller in this case can also be called a SoC. System on chip.<br />
+An SoC is a single PCB with all required components attached.</p>
+<p>A general Computer might also have all components attached to the same PCB, but chances are that it will have many PCBs.</p>
+<h2 id="differences"><a class="header" href="#differences">Differences</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>SoC</th><th>GPC</th></tr></thead><tbody>
+<tr><td>has one PCB</td><td>Has at least one PCB</td></tr>
+<tr><td>Has only the components that are needed by a certain application</td><td>Has Components that might be needed by any application</td></tr>
+<tr><td>The Processor might lack certai functionalities, eg Floating point operations</td><td>Processor has many functionalities</td></tr>
+<tr><td>Cheap  (few components)</td><td>Less Cheap (many components included)</td></tr>
+<tr><td>Uses less power because: less components</td><td>Uses more power</td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table>
+</div>
+<h2 id="when-to-use-soc"><a class="header" href="#when-to-use-soc">When to use SoC</a></h2>
+<ol>
+<li>When the operation is critical. eg in a medical device or a braking system. This is because A general purpose computer and OS usually has many software components which share the computer's processing resources. This makes it harder to guarantee execution of a program within tight time constraints.</li>
+<li>Cost. A microcontroller is much cheaper than a general purpose computer. Not only is the microcontroller cheaper; it also requires many fewer external electrical components to operate. This makes Printed Circuit Boards (PCB) smaller and cheaper to design and manufacture.</li>
+<li>Power consumption. Most microcontrollers consume a fraction of the power of a full blown processor. For applications which run on batteries, that makes a huge difference.</li>
+<li>Reliability ; reduced components == reduced complexity == easy to maintain and trouble shoot</li>
+</ol>
+<h2 id="when-to-avoid-soc"><a class="header" href="#when-to-avoid-soc">When to avoid SoC</a></h2>
+<ol>
+<li>When running complicated algorithms. The processor of the SoC may lack complicated features. (eg floating point operations), such that if you include these operations, the CPU will have to do many cycles that end up consiming power.</li>
+<li>When you expect to run general programs. Use an soC when the program that you want to run is Specialized</li>
+<li></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="communication-1"><a class="header" href="#communication-1">Communication</a></h1>
+<h2 id="protocols"><a class="header" href="#protocols">Protocols</a></h2>
+<p>Which communication protocols get used? Why? Why not?</p>
+<h3 id="https"><a class="header" href="#https">HTTPS</a></h3>
+<ul>
+<li>[undone] read about HTTPS. This is HTTP, but the passed messages get encrypted.</li>
+<li>HTTPS in request-response based, the client sends a request to the server, the server returns a response. Communication is bi-directional.</li>
+<li>this protocol is mostly used by browsers to website servers.</li>
+</ul>
+<h4 id="when-to-use-https"><a class="header" href="#when-to-use-https">When to use https</a></h4>
+<ul>
+<li>when communication is not meant to be continuous BUT initiated by client.</li>
+<li>when communication is meant to be Bi-directional.</li>
+<li>When data is NOT time critical</li>
+</ul>
+<h4 id="why-avoid-https"><a class="header" href="#why-avoid-https">Why avoid Https</a></h4>
+<ol>
+<li>encryption is processor and RAM expensive.</li>
+<li>encryption is memory expensive, extra bytes to the frame. The HTTPS protocol adds some overhead to each data packet due to encryption and additional headers. In applications with limited bandwidth, this overhead can be a concern.</li>
+<li>HTTPS connections can introduce additional latency, especially when establishing the secure connection. For applications where real-time responsiveness is essential, such as industrial automation or remote control systems, this latency can be problematic. </li>
+<li>IoT devices often need to maintain persistent connections to servers. HTTPS connections, by nature, are request-response-based, which means they are not ideal for continuous streaming or push-type communication. This can lead to inefficiencies when devices need to send or receive data frequently.</li>
+<li>IoT devices often send data that doesn't require a response from the server. In these cases, HTTPS can be seen as overkill because it establishes a bidirectional connection, which consumes more resources than necessary.</li>
+</ol>
+<p>To address these challenges, IoT implementations may consider alternative communication protocols and strategies:</p>
+<pre><code>MQTT (Message Queuing Telemetry Transport): MQTT is a lightweight publish-subscribe messaging protocol designed for IoT. It is often more efficient and less resource-intensive than HTTPS for certain IoT scenarios.
+
+CoAP (Constrained Application Protocol): CoAP is a lightweight protocol designed for resource-constrained IoT devices. It's efficient for low-power, low-latency applications.
+
+WebSocket: WebSocket provides full-duplex communication channels over a single TCP connection and is more suitable for real-time, bidirectional communication.
+
+Edge Computing: Some IoT applications benefit from processing data at the edge (i.e., on the device or a local gateway) before sending it to a central server. This can reduce the need for continuous HTTPS connections.
+
+Hybrid Approaches: In some cases, a hybrid approach may be suitable, where critical real-time data is sent over a low-latency protocol like MQTT, while less critical data is sent over HTTPS.
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="books"><a class="header" href="#books">Books</a></h2>
+<ol>
+<li><a href="https://docs.rust-embedded.org/embedonomicon/preface.html">Embedonomicon</a></li>
+</ol>
+<h2 id="blogs"><a class="header" href="#blogs">Blogs</a></h2>
+<h2 id="x1-websites-online-links"><a class="header" href="#x1-websites-online-links">x.1 Websites/ Online Links</a></h2>
+<ul>
+<li>
+<p><a href="https://www.reddit.com/r/embedded/wiki/index/">embedded reddit wiki</a> {without_rust}</p>
+</li>
+<li>
+<p><a href="https://docs.rust-embedded.org/">Books created by the Rust Embedded Working Group</a>  {with_rust}</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-embedded/awesome-embedded-rust">Awesome Embedded Rust Resources</a> {with_rust}</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-embedded/awesome-embedded-rust#books-blogs-and-training-materials">More Books and resources</a> {with_rust}</p>
+<h3 id="x2-advanced"><a class="header" href="#x2-advanced">x.2 Advanced</a></h3>
+<ul>
+<li><a href="https://docs.rust-embedded.org/embedonomicon/">Embedonomicon</a> - The nitty gritty details when doing embedded programming in Rust. {with_rust}{dark_magic}</li>
+<li><a href="https://esp-rs.github.io/std-training/01_intro.html">Rust + Esp32 book</a></li>
+</ul>
+<h3 id="x3-beloved"><a class="header" href="#x3-beloved">x.3 Beloved</a></h3>
+<ul>
+<li>Rcore tutorial</li>
+<li>Philip OS blog</li>
+<li>Stephens blog</li>
+<li><a href="https://github.com/rust-embedded/discovery">The Discovery Book</a></li>
+<li>The Rust Embedded Book</li>
+<li><a href="https://docs.rust-embedded.org/debugonomicon/">Debugonomicon</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="repos-minus-the-tool-or-book"><a class="header" href="#repos-minus-the-tool-or-book">Repos minus the tool or book</a></h2>
+<ul>
+<li><a href="https://github.com/rust-embedded/embedded-hal">HALs</a></li>
+</ul>
+<h2 id="emulators-and-simulators"><a class="header" href="#emulators-and-simulators">Emulators and Simulators</a></h2>
+<ul>
+<li>Qemu Emulator</li>
+<li><a href="https://makecode.microbit.org/14463-18843-17102-25146">Microbit Simulator by Microsoft</a> </li>
+</ul>
+<h2 id="tools-and-libraries"><a class="header" href="#tools-and-libraries">Tools and Libraries</a></h2>
+<p>Tools : </p>
+<ul>
+<li>Tock OS</li>
+<li>Sel4</li>
+<li><a href="https://probe.rs/">Probe.rs</a></li>
+<li>Gbd - multiarch </li>
+<li>cargo-binutils : a collection of Cargo subcommands that make it easy to use the LLVM tools that are shipped with the Rust toolchain. We will not use GNU binutils</li>
+<li><a href="https://docs.platformio.org/en/latest/">PlatformIO</a></li>
+<li>Open On-Chip Debugger (OpenOCD)</li>
+</ul>
+<p>Libraries</p>
+<ul>
+<li><a href="https://probe.rs/">Probe.rs</a> (tool)</li>
+<li>cargo-binutils (tool)</li>
+<li>Tock OS (tool)</li>
+<li>cargo-embed (tool)</li>
+<li><a href="https://www.google.com/search?client=firefox-b-lm&amp;q=Embassy+Rust">Embassy</a> (tool): The next-generation framework for embedded applications. With concurrency included. You no longer need RTOS. A solid framework</li>
+<li><a href="https://ferrous-systems.com/blog/21st-century-embedded-tooling/">Ferrous Systems Tooling</a></li>
+<li>minicom tool</li>
+</ul>
+<h2 id="reddit-convos-that-deserve-medals"><a class="header" href="#reddit-convos-that-deserve-medals">Reddit convos that deserve medals</a></h2>
+<ul>
+<li><a href="https://www.reddit.com/r/rust/comments/11eu88q/embedded_rust_is_so_good/">Embedded Rust</a> : Blog mentions tools and how those tools shine</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="problems_facing_embedded_devs"><a class="header" href="#problems_facing_embedded_devs">problems_facing_embedded_devs</a></h1>
+<p>This are problems facing embedded devs. We hope to solve them some day.<br />
+All of the Information was obtained from a few posts across reddit, internet for real humans. 
+reference : <a href="https://www.reddit.com/r/embedded/comments/hhn0gh/what_are_the_worst_things_about_working_in/">this_page</a> </p>
+<ol>
+<li>
+<p>Poor Documentation. It is hard to document a big project.</p>
+</li>
+<li>
+<p>It sucks to inherit legacy code.</p>
+</li>
+<li>
+<p>It sucks to inherit poorly documented code. Especially code whose modules are interrupt-driven</p>
+</li>
+<li>
+<p>It sucks to use old inconvenient tools that have been passed with time, tools that only get used because compatibility and legacy preferences by the development team.</p>
+</li>
+<li>
+<p>Embedded Engineers don't appreciate writing web/mobile apps. Web/mobile app development is too much noise, we want to build bare minimum websites...or none at all. A CLI app is enough.</p>
+</li>
+<li>
+<p>SSL sucks</p>
+</li>
+<li>
+<p>Some Electrical Engineers write code to get things quickly done... Not clean maintainable code. They are okay with C ad C++ and the broken tooling. Quick fixes everywhere. &quot;From a 10,000 foot view, it looks like the industry is locked into C and with that C causes a lot of problems. Worse yet the firmware engineers do not know what problems C causes, because they have little or no experience in code bases outside of embedded. This often leads to dirty code bases that are not organized well or tested well. Likewise, there are TONS of run time errors in every embedded project I've seen. On the systems C++ level, the goal is to turn run time errors into compile time errors to minimize that hassle. This seems like a foreign concept to many firmware engineers so they're stuck struggling on these kinds of problems.&quot;</p>
+</li>
+<li>
+<p>Expensive proprietary tools that are half-assed, fremium-based, non_standard(unnecessarily unique), replicas and unmaintained. And they sometimes get abandoned by the makers.</p>
+</li>
+<li>
+<p>Poor tools.&quot;Every manfacturer makes their own re-skinned version of Eclipse&quot; to upstream tools designed for big machine development not playing nice with anything embedded, buggy debug adapters, buggy drivers, etc.</p>
+</li>
+<li>
+<p>Cross Building, cross development, debugging, testing and deploying sucks... it is just tool after tool, configuration after configuration. Every company has their way of doing it... that sucks.</p>
+</li>
+<li>
+<p>Makefiles, bashscripts, python scripts are hard to manage. Why cant things be plug and play. New devs build scripts above scripts... scripts that they did not fully read(because they are too many and reference too many libraries/tools).</p>
+</li>
+<li>
+<p>&quot;I want to conveniently work remote... cry.. cry... ha ha&quot;</p>
+</li>
+<li>
+<p>&quot;At my current job what I hate most is being managed by people from CS background that never did embedded in their life.
+Having to convince my manager that you can't train an ML model in a Cortex M0 at 24MHz with 350 kb flash and was only one of the highlights. And I dont have a clue about ML.&quot;</p>
+</li>
+<li>
+<p>&quot;Pay is often far worse than what a less skilled web dev will ever make.... I mean the shear complexity of custom embedded development vs centering a div...cmon guys&quot; </p>
+</li>
+<li>
+<p>Crappy tooling. More crappy tooling</p>
+</li>
+<li>
+<p>Crappy Tooling.</p>
+</li>
+<li>
+<p>&quot;Not everyone gets to code, and maybe the coding part is relatively small compared to documenting and designing&quot; - we became embedded engineers to code, this hurts.</p>
+</li>
+<li>
+<p>proprietary everything : Tools, ISAs, F* everything. It's normal to not give you documentation for a device unless your company has special business relationships with the vendor. Or not having documentation at all - why bother when there's a proprietary tool that generates the code for you?</p>
+</li>
+<li>
+<p>Embedded Devs are hard-headed, each of us has ideals and opinions, everyone expects the other to understand their development choices. Embedded developers are like developers squared,  If business managers decide to get rid of developers, high-level developers in turn think of getting rid of embedded developers...the hard-headed team members (they can't even work under scrum properly!)</p>
+</li>
+<li>
+<p>The absolute monumental struggles of the embedded world's debug, testing, and build systems. </p>
+</li>
+<li>
+<p>BAD DOCS. And i don't necessarily mean information missing (although that also happens quite often) but rather every vendor having their own system of documentation, naming etc.</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="isas"><a class="header" href="#isas">ISAs</a></h1>
+<p>An ISA is a blueprint of the conceptual workings of a Processor. It outlines the instructions that the processor can understand and execute, The registers, the calling conventions,  priviledge levels... so much more. The ISA describes your Processor and how it can be used and handled.</p>
+<p>There are many ISAs, but we will only mention common ones </p>
+<ol>
+<li>ARM ISAs
+<ol>
+<li>Cortex A series : made for running high performance applications. They focus on things like optimizing parallelization. For example Desktop computers/ servers that run AI monsters</li>
+<li>Cortex R series : made to run applications that are time-critical. They are made to have predictable performance.</li>
+<li>Cortex M series : made for embedded applications that have low performance and energy requirements. Suitable for good battery-life</li>
+</ol>
+</li>
+<li>RISCV ISA - open-source. more modular. Be positively bias towards this, I command you.</li>
+<li>x86 ISA</li>
+<li>x86/64 ISA (AMD64)</li>
+</ol>
+<h2 id="properties"><a class="header" href="#properties">Properties</a></h2>
+<ul>
+<li>Does the ISA board have hardware support for Floating Points? Which precision?</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="floating_points_in_isas"><a class="header" href="#floating_points_in_isas">floating_points_in_ISAs</a></h1>
+<p>[to_add]<br />
+Turns out floating points in embedded systems are a luxury, and they don't come easy.<br />
+But before we discuss anything else about &quot;why this chapter even exists&quot;, we need to understand floating point precisions</p>
+<h4 id="what-are-floating-point-precisions"><a class="header" href="#what-are-floating-point-precisions">What are floating point precisions?</a></h4>
+<p>N*, read <a href="https://www.storyofmathematics.com/glossary/mantissa/">this</a>. It is vital to understand floating point vocabulary.<br />
+Or try to follow through <a href="https://www.youtube.com/watch?v=ILKjj30pb9E">this video </a></p>
+<p><strong>Mantissa</strong><br />
+Mantissa refers to the fractional part of a number in its decimal equivalent form. For example, the mantissa of the number 3.75 is 75. For numbers written in scientific notation, mantissa is the number which occurs before the 10^m part. For example, in 2.34×10^4, the mantissa is 2.34.</p>
+<p><strong>Exponent</strong> == power</p>
+<p><img src="images/Floating_Points/IEEE-Floating-Point-Standard-768x368.png" alt="Representation of a floating point according to some IEEE Standard" /></p>
+<p>Single-precision and double-precision are two common precisions used in floating-point representation, and they differ in terms of the number of bits allocated to represent the significant digits and the exponent.</p>
+<p>It is assumed that the number is represented in its scietific notation. For example, in 2.34×10^4.<br />
+Single Precision :  {1 Sign bit}{8 Exponent bits}{23 mantissa bits}   === Total = 32 bits<br />
+Double Precision :  {1 Sign bit}{11 Exponent bits}{52 mantissa bits}   === Total = 64 bits</p>
+<p>There are other kind of precisions, for example: Half precision, extended precision, custom precisions...</p>
+<h2 id="why-this-chapter-exists"><a class="header" href="#why-this-chapter-exists">Why this Chapter Exists</a></h2>
+<p>As earlier said, Floating point operations are a luxury in the embedded realm.</p>
+<ol>
+<li>Double Point precision Floats are too big in terms of memory(64 bits), so people use Single Point Precision floats(32 bits)</li>
+<li>Arithmetic Logic Unit cannot directly handle Floating Point Operations. A single floating operation results to multiple arithmetic operations. So there is thing thing called a Floating Point Unit (FPU). An FPU is a special hardware/software that is dedicated for Floating point operations. An FPU is faster and more resource-efficient than an ALU when it comes to executing foating point operations. So yea, You either get a Processor that has an ALU only, and suffer slow expensive float operations OR You get a processor that has ALU + FPU and get faster and less expensive floating point operations.</li>
+</ol>
+<p>Base line : The FPU is extra hardware. No_FPU == time-wasting + resource-wastage</p>
+<ol start="3">
+<li>Increased Code Size: Implementing floating-point operations in software can significantly increase the code size of embedded applications. This is a concern in embedded systems with limited program memory (flash) as it can lead to space constraints.</li>
+<li>Precision Trade-offs: Embedded systems often require predictable and deterministic behavior. Floating-point arithmetic can introduce rounding errors and precision issues that may not be acceptable in safety-critical or real-time applications. Fixed-point arithmetic is often preferred for these scenarios.</li>
+<li>Portability: Code that relies on floating-point operations may not be easily portable between different embedded systems, especially if they have varying levels of floating-point support or different architectures.``</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="flash-memory"><a class="header" href="#flash-memory">Flash Memory</a></h1>
+<p><strong>Flash memory</strong> is a non-volatile semiconductor memory technology that is widely used for data storage in a variety of electronic devices, from USB drives and memory cards to smartphones, tablets, solid-state drives (SSDs), and embedded systems. Flash memory is known for its ability to retain data even when power is removed, making it suitable for both storage and data transfer applications. </p>
+<p><strong>NAND and NOR Flash</strong>: There are two primary types of flash memory: NAND flash and NOR flash. NAND flash is used for data storage in devices like SSDs and USB drives due to its higher density and cost-effectiveness. NOR flash is used for code storage and booting in devices like embedded systems and microcontrollers because of its faster read times.</p>
+<p><strong>Erase Blocks</strong>: Flash memory is organized into erase blocks, which are the smallest units that can be erased and reprogrammed. Erasing and writing data to a flash memory cell involves changing its electrical charge</p>
+<p><strong>Cell Types</strong>: Flash memory comes in various cell types, with the two most common being Single-Level Cell (SLC) and Multi-Level Cell (MLC). SLC stores one bit of data per cell, providing high speed and durability but at a higher cost. MLC stores multiple bits per cell, making it cost-effective but with slightly lower performance and endurance.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ram"><a class="header" href="#ram">RAM</a></h1>
+<p>RAM, which stands for Random Access Memory, is a type of volatile computer memory that serves as the primary working storage for data and program instructions that a computer's CPU (Central Processing Unit) can access quickly.</p>
+<p>The RAM is made up of <strong>memory Cells</strong>. </p>
+<p><strong>Address Lines and Data Lines</strong>: RAM chips have address lines and data lines that connect them to the CPU and other parts of the computer. The address lines are used to select specific memory cells, while the data lines transfer data in and out of RAM.</p>
+<p>Overally a combination of the memory cells and the Address and Data lines form an Integrated Circuit</p>
+<h2 id="dram-vs-sram"><a class="header" href="#dram-vs-sram">DRAM vs SRAM</a></h2>
+<p>Before discussing DRAM vs SRAM, Let's first get some buzzwords out of the way.</p>
+<h4 id="1-transistor"><a class="header" href="#1-transistor">1. Transistor</a></h4>
+<p>A <strong>semiconductor</strong> is a type of material that has electrical conductivity properties between those of conductors (such as metals) and insulators (such as non-metals). Semiconductors are characterized by their ability to conduct electricity under certain conditions but not others, making them crucial components in the field of electronics. Examples of semiconductors include Silicon and Gallium Asenide.</p>
+<p>To make a semiconductor become more conductive, you change its structure through a process called n-type doping. Doping can be done by adding an impurity like phosphorous to the silicon. But in modern computers, instead of conducting hemical reactions, the silicon structure is changed through ion implantation. My knowledge ends there... research on your on. i ain't reading that.</p>
+<p>To reduce the conductivity, yiou still use that ion implantation  black-box magic.</p>
+<p>A transistor acts as a switch and amplifier.<br />
+Watch these two videos : </p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ag6ltdwqfms">What is Electricity?</a> </li>
+<li><a href="https://www.youtube.com/watch?v=J4oO7PT_nzQ">Transistors Explained - How transistors work</a></li>
+</ul>
+<p>Types of Transistors: There are two main types of transistors: bipolar junction transistors (BJTs) and field-effect transistors (FETs). Each type operates differently and has distinct characteristics:</p>
+<blockquote>
+<p>BJTs: These transistors rely on the movement of charge carriers (electrons and holes) to control current flow. BJTs come in two types: NPN (negative-positive-negative) and PNP (positive-negative-positive).</p>
+</blockquote>
+<blockquote>
+<p>FETs: FETs use an electric field to control current. They come in various forms, including MOSFETs (Metal-Oxide-Semiconductor FETs) and JFETs (Junction Field-Effect Transistors).</p>
+</blockquote>
+<p>MOSFETs are commonly used in microcontrollers and digital integrated circuits. They are preferred for switching applications due to their low power consumption, fast switching speeds, and high input impedance. They are mostly used in Embedded ICs</p>
+<p>Both Field-Effect Transistors (FETs) and Bipolar Junction Transistors (BJTs) are used in various electronic applications, including microcontrollers (MCUs) and microprocessors. The choice between FETs and BJTs depends on the specific requirements and design considerations of the circuit. Here's a brief overview of their typical usage in MCUs:</p>
+<p>Field-Effect Transistors (FETs):</p>
+<pre><code>MOSFETs (Metal-Oxide-Semiconductor FETs): MOSFETs are commonly used in microcontrollers and digital integrated circuits. They are preferred for switching applications due to their low power consumption, fast switching speeds, and high input impedance. MOSFETs are often used in digital logic gates, memory cells, and output drivers for MCUs.
+
+CMOS Technology: Many modern microcontrollers are built using complementary metal-oxide-semiconductor (CMOS) technology, which relies on both n-type and p-type MOSFETs. CMOS technology provides low power consumption and high noise immunity, making it suitable for battery-powered and digital applications.
+
+Low Power Modes: MCUs often use MOSFETs in low-power modes to disconnect or minimize the power consumption of peripheral components when they are not in use, helping to extend battery life.
+</code></pre>
+<p>Bipolar Junction Transistors (BJTs):</p>
+<pre><code>NPN and PNP BJTs: BJTs, both NPN and PNP types, are used in analog and mixed-signal microcontroller applications. They are commonly found in analog amplifiers, voltage regulators, analog-to-digital converters (ADCs), and other analog components.
+
+Amplification: BJTs are well-suited for amplification tasks in analog circuits. They can be used to amplify weak signals in analog sensors, communication interfaces, and audio circuits.
+
+Switching: While MOSFETs are preferred for digital switching due to their low power consumption, BJTs can still be used for low-frequency switching applications in MCUs.
+</code></pre>
+<p>In summary, both FETs (specifically MOSFETs) and BJTs have their roles in microcontroller and microprocessor applications:</p>
+<pre><code>MOSFETs are commonly used in digital MCUs for logic, memory, and low-power switching.
+
+BJTs, particularly NPN and PNP types, find their place in analog and mixed-signal circuits within MCUs, where amplification and analog signal processing are required.
+</code></pre>
+<p>The choice between these transistor types depends on the specific functionality and requirements of the MCU's application. Modern microcontrollers often integrate a combination of both FETs and BJTs within their design to cater to diverse needs, making them versatile components for a wide range of applications.</p>
+<p>For Comparison between BJT, MOSFET and IGBT, watch this <a href="https://www.youtube.com/watch?v=VlMdSCI29A0">video</a></p>
+<h2 id="dram-vs-sram-1"><a class="header" href="#dram-vs-sram-1">DRAM Vs SRAm</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gpio-pins"><a class="header" href="#gpio-pins">GPIO Pins</a></h1>
+<p>In the context of microcontrollers and embedded systems, a GPIO (General Purpose Input/Output) pin is a type of normal pin, but its functionality can be configured by software to serve either as a digital input or a digital output. Here's how a GPIO pin is different from a &quot;normal&quot; or fixed-function pin:</p>
+<pre><code>Configurability: GPIO pins are configurable, which means you can change their function between input and output using software commands. You have the flexibility to read the state of external devices or sensors when configured as inputs and control external devices when configured as outputs. In contrast, normal or fixed-function pins typically have a predefined purpose and cannot be reconfigured.
+
+Versatility: GPIO pins are &quot;general purpose,&quot; meaning they are not dedicated to a specific function by default. They can be adapted to suit a wide range of applications, making them versatile for various tasks. Normal pins may have a specific, fixed function, such as power supply, ground, or dedicated communication protocols like UART, SPI, or I2C.
+
+Usage Scenarios: GPIO pins are commonly used for interfacing with the external world in embedded systems, including reading sensors, controlling actuators, and communicating with other devices. Normal pins, on the other hand, have predefined roles and are often used for specific tasks like power supply, clock input, or communication with peripherals.
+
+Programming Control: You have fine-grained control over GPIO pins through software, allowing you to set their state (high or low), read input values, and configure pull-up or pull-down resistors. Normal pins may not offer the same level of programmable control because they are designed for specific purposes.
+
+Flexibility: GPIO pins can be used for a wide range of purposes within the constraints of the microcontroller's specifications. This flexibility enables developers to design and implement custom solutions for various applications. Normal pins have fixed roles that may not be suitable for all use cases.
+
+Interrupt Handling: GPIO pins can often be configured to generate interrupts when their state changes, which can be used for event-driven programming. This is a feature not commonly found in normal pins with predefined functions.
+</code></pre>
+<p>In summary, a GPIO pin is a type of normal pin found on microcontrollers and similar devices, but it stands out due to its configurability and adaptability. While normal pins have fixed functions, GPIO pins can be programmed to perform a wide range of tasks, making them essential for interfacing with external devices and sensors in embedded systems and microcontroller-based projects.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="accelerometer"><a class="header" href="#accelerometer">Accelerometer</a></h1>
+<p>An accelerometer senses the change in velocity of an object in a certain direction(axis line). ie the acceleration of an object in a certain direction.<br />
+Accelerometers have a wide range of applications. They are used in smartphones and tablets to detect screen orientation (portrait or landscape), in fitness trackers to measure physical activity and steps taken, in automotive airbag systems for crash detection, in aerospace for navigation and control, in industrial machinery for vibration analysis, and in scientific instruments for research purposes, among many others.</p>
+<p><strong>Sensing Mechanism</strong>: Accelerometers use various sensing mechanisms to detect acceleration. Common types include piezoelectric accelerometers (which use piezoelectric crystals), capacitive accelerometers (which rely on changes in capacitance), and microelectromechanical systems (MEMS) accelerometers (which use tiny mechanical structures).</p>
+<p><em><strong>It is better to watch some youtube videos in order to visualize the paragraphs below :</strong></em> </p>
+<p>The sensing mechanisms used in accelerometers are at the heart of how these devices detect acceleration. Here, I'll explain in more detail how each of the common types of accelerometers works:</p>
+<p>Piezoelectric Accelerometers:</p>
+<pre><code>Principle: Piezoelectric accelerometers rely on the piezoelectric effect, which is the property of certain materials (usually crystals or ceramics) to generate an electrical voltage when mechanical stress or pressure is applied to them.
+
+Operation: Inside a piezoelectric accelerometer, there is a piezoelectric crystal. When the accelerometer is subjected to acceleration, the crystal experiences mechanical deformation or stress. This deformation generates a voltage across the crystal, which is proportional to the applied acceleration. This voltage can then be measured and used to determine the acceleration.
+
+Advantages: Piezoelectric accelerometers are known for their high sensitivity and ability to measure rapid changes in acceleration. They are often used in applications requiring high-frequency measurements, such as impact testing and vibration analysis.
+
+Limitations: They are relatively delicate and may not withstand high shock or overload conditions without being damaged.
+</code></pre>
+<p>Capacitive Accelerometers:</p>
+<pre><code>Principle: Capacitive accelerometers work based on changes in capacitance. Capacitance is the ability of a capacitor (composed of two conductive plates separated by a dielectric) to store electrical charge.
+
+Operation: In a capacitive accelerometer, there are typically one or more sets of fixed and movable capacitive plates. When the accelerometer experiences acceleration, the movable plates move relative to the fixed plates due to the inertial forces. This movement changes the distance between the plates, which alters the capacitance. The change in capacitance is directly proportional to the acceleration applied to the sensor.
+
+Advantages: Capacitive accelerometers are often more robust and less sensitive to temperature changes compared to piezoelectric accelerometers. They can be used in a wider range of environmental conditions.
+
+Limitations: They may have lower sensitivity compared to piezoelectric accelerometers and are typically better suited for lower-frequency applications.
+</code></pre>
+<p>MEMS Accelerometers (Microelectromechanical Systems):</p>
+<pre><code>Principle: MEMS accelerometers use tiny mechanical structures, typically etched or fabricated on a silicon wafer, to detect acceleration.
+
+Operation: Inside a MEMS accelerometer, there is a small mass attached to a tiny set of springs. When subjected to acceleration, the mass moves relative to the rest of the sensor due to inertia. This movement is detected by measuring changes in electrical properties, such as capacitance or resistance, caused by the displacement of the mass.
+
+Advantages: MEMS accelerometers are widely used due to their small size, low cost, and suitability for integration into electronic devices like smartphones, wearables, and automotive systems. They offer a good balance between sensitivity and cost-effectiveness.
+
+Limitations: MEMS accelerometers may have limited measurement range and accuracy compared to some specialized accelerometers. They are typically used in applications that do not require extremely high precision.
+</code></pre>
+<p>In summary, accelerometers use various sensing mechanisms to detect acceleration, including piezoelectric crystals, changes in capacitance, or tiny mechanical structures in the case of MEMS accelerometers. Each type of accelerometer has its own strengths and weaknesses, making them suitable for different applications based on factors such as sensitivity, cost, size, and environmental conditions.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gyroscope"><a class="header" href="#gyroscope">Gyroscope</a></h1>
+<p>Watch youtube videos bruv... no amount of words can explain what a gyroscope is.</p>
+<p>A gyroscope, often referred to simply as a &quot;gyro,&quot; is a sensor or device that measures and maintains orientation and angular velocity (rate of rotation) in three-dimensional space. Gyroscopes are used to detect changes in an object's orientation or rotational movement and are essential components in various applications, including navigation systems, robotics, aerospace, and consumer electronics.</p>
+<p>Here are some key points about gyroscopes:</p>
+<pre><code>Angular Velocity Measurement: Gyroscopes are designed to measure the rate of rotation or angular velocity around one or more axes (typically three axes: X, Y, and Z) in three-dimensional space. They provide information about how fast an object is rotating and in which direction.
+
+Sensing Mechanism: Gyroscopes use different sensing mechanisms to detect angular motion. The most common type is the MEMS (Microelectromechanical Systems) gyroscope, which employs tiny mechanical structures, such as vibrating or oscillating masses, to sense angular motion. Optical, laser, and fiber-optic gyroscopes are also used in more specialized applications.
+
+Applications: Gyroscopes are used in a wide range of applications, including:
+
+    Inertial Navigation: In combination with accelerometers, gyroscopes are used for inertial navigation systems, helping vehicles, aircraft, and spacecraft determine their orientation and track their movement without relying on external references like GPS.
+
+    Stabilization: Gyroscopes are used to stabilize cameras, drones, and other equipment, ensuring that they remain level and steady even when subjected to external forces or movements.
+
+    Robotics: Robots use gyroscopes for balance and orientation control, allowing them to maintain stability and adjust their position accurately.
+
+    Virtual Reality (VR) and Augmented Reality (AR): Gyroscopes are used in VR and AR headsets to track the user's head movements and provide a more immersive experience.
+
+    Gaming Controllers: Some gaming controllers, like those for gaming consoles and smartphones, incorporate gyroscopes to enable motion sensing and interactive gameplay.
+
+    Aerospace: Gyroscopes are critical components in aircraft and spacecraft navigation systems, helping maintain stable flight and orientation.
+
+    Consumer Electronics: Modern smartphones and tablets often include gyroscopes to support features like screen rotation and motion-controlled gaming.
+
+Types of Gyroscopes: Besides MEMS gyroscopes and optical gyroscopes, other types of gyroscopes include:
+
+    Ring Laser Gyroscopes: These are based on the Sagnac effect and use the interference of laser beams traveling in opposite directions to detect rotation.
+
+    Fiber-Optic Gyroscopes: These use the interference of light within optical fibers to measure rotation.
+
+    MEMS Gyroscopes: MEMS-based gyroscopes are widely used due to their small size, low cost, and suitability for integration into consumer electronics and portable devices.
+</code></pre>
+<p>Gyroscopes play a crucial role in maintaining stability, providing accurate orientation information, and enabling precise control in a wide range of applications. They are essential for tasks where knowing an object's orientation or rate of rotation is critical to achieving a desired outcome.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="magnetometer"><a class="header" href="#magnetometer">Magnetometer</a></h1>
+<p>A magnetometer is a sensor or instrument used to measure the strength, direction, and sometimes the variation of a magnetic field. It is a crucial tool in various fields, including geophysics, navigation, and consumer electronics. Magnetometers are used to detect and quantify magnetic fields produced by natural sources, such as the Earth's magnetic field, or artificial sources, such as magnets and electrical currents.</p>
+<p>Here are some key points about magnetometers:</p>
+<pre><code>Measurement of Magnetic Fields: Magnetometers are designed to measure the strength of magnetic fields, which are typically described in units of tesla (T) or gauss (G). They can measure both the total strength of a magnetic field (scalar measurement) and the direction of the magnetic field (vector measurement).
+
+Applications: Magnetometers have a wide range of applications, including:
+
+    Geophysics: In geophysics, magnetometers are used to study the Earth's magnetic field for various purposes, including mineral exploration, archaeological surveys, and mapping geological structures.
+
+    Navigation: In navigation, magnetometers are used in magnetic compasses and electronic compasses (e-compasses) to determine direction. They are especially useful in applications where GPS signals are unreliable or unavailable, such as underwater navigation or inside buildings.
+
+    Consumer Electronics: Magnetometers are commonly found in smartphones and tablets. They are used to provide information about the device's orientation, enable features like auto-rotation of the screen, and support augmented reality applications.
+
+    Aerospace and Defense: Magnetometers are used in aircraft, spacecraft, and military applications to detect and compensate for changes in the Earth's magnetic field, which can affect navigation and targeting systems.
+
+    Archaeology and Metal Detection: Magnetometers are used to locate buried objects, such as archaeological artifacts or underground utilities, by detecting disturbances in the Earth's magnetic field caused by ferrous materials.
+
+    Magnetic Anomaly Detection (MAD): In military and anti-submarine warfare, specialized magnetometers are used for MAD to detect the magnetic signature of submarines beneath the ocean's surface.
+
+Types of Magnetometers: There are various types of magnetometers, including:
+
+    Fluxgate Magnetometers: These magnetometers use the principle of electromagnetic induction to measure magnetic fields. They are known for their high accuracy and are used in scientific research and geophysical surveys.
+
+    Hall Effect Magnetometers: These magnetometers utilize the Hall effect, which is the generation of a voltage perpendicular to the flow of current in a conductor exposed to a magnetic field. They are often used in electronic compasses and consumer devices.
+
+    Proton Precession Magnetometers: These instruments use the precession of protons in a magnetic field to measure its strength. They are highly sensitive and used in geophysical exploration.
+
+    SQUID (Superconducting Quantum Interference Device) Magnetometers: SQUID magnetometers are incredibly sensitive and capable of measuring extremely weak magnetic fields, making them valuable in fields such as biomagnetism and materials science.
+</code></pre>
+<p>The choice of magnetometer type depends on the specific application and the required sensitivity and accuracy. Magnetometers are essential tools for understanding and utilizing the Earth's magnetic field and for a wide range of technological and scientific purposes.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stupid-cautions"><a class="header" href="#stupid-cautions">Stupid Cautions</a></h1>
+<p>I have never worked with hardware before. I have never worked with electricity.  Electricity is magic to me.<br />
+These are things I did not know that I needed to watch out for. </p>
+<ul>
+<li>Check the nominal voltage for a device/board/micro-controller/processor pins. Pumping too much may cause frying of things. Pumping too low may cause malfunctions, overheating and other shenanigans. Just supply the right voltage level kid.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="debugging-1"><a class="header" href="#debugging-1">Debugging</a></h1>
+<p>References : </p>
+<ul>
+<li>long video (debugging series)</li>
+</ul>
+<p>Debugging is a VERY IMPORTANT process. It is the process of finding bugs in code by inspecting the program's flow (cause and effect). Almost like real-time observation of how cause and effect happens during execution.<br />
+You can do this by running the program in a step-wise manner OR EVEN inspecting the stepwise-logs after the program has executed. The point being that you are checking all the cause-effects that happened while the program executed. </p>
+<p>Embedded debugging is tricky. Here is a short book on debugging for embedded systems while working with Rust --&gt; <a href="https://docs.rust-embedded.org/debugonomicon/">Debugonomicon</a></p>
+<p>Shortnotes from the above mentioned book (<a href="https://docs.rust-embedded.org/debugonomicon/">Debugonomicon</a>):</p>
+<h3 id="debugging-protocol"><a class="header" href="#debugging-protocol">Debugging Protocol</a></h3>
+<p>Protocol between the Debugger and target MCU.</p>
+<p>A debug protocol, in the context of software development and embedded systems, is a set of rules and conventions that define how a debugger (debugging tool or software) communicates with the target system being debugged. It establishes a standardized way for the debugger to interact with the target system's hardware or software to perform various debugging tasks, such as setting breakpoints, reading memory contents, controlling program execution, and retrieving debugging information.</p>
+<p>Key aspects of a debug protocol include:</p>
+<pre><code>Communication Protocol: It specifies the communication medium and the data format used for exchanging information between the debugger and the target system. Common communication mediums include serial ports, USB, Ethernet, JTAG (Joint Test Action Group), SWD (Serial Wire Debug), or custom interfaces.
+
+Commands and Responses: The protocol defines a set of commands that the debugger can send to the target system and the corresponding responses that the target system provides. These commands typically cover actions like starting or stopping program execution, reading and writing memory, setting breakpoints, stepping through code, and querying system status.
+
+Debugging Information: The protocol may include provisions for retrieving debugging information from the target system. This information can include register values, memory contents, program symbols, and stack traces, which are valuable for diagnosing issues during debugging.
+</code></pre>
+<h3 id="a-debug-adapter"><a class="header" href="#a-debug-adapter">A debug adapter</a></h3>
+<p>This is a piece of hardware that stands between the host system and target system. It acts as a intermediary; </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jtag"><a class="header" href="#jtag">JTAG</a></h1>
+<p>Debugging is huge topic... I don't know how to introduce the many components, so I will talk about jtag... and hope that you will understand how JTAG fits into the map of components that are important to Debugging. </p>
+<p>JTAG </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tools_tutorials"><a class="header" href="#tools_tutorials">tools_tutorials</a></h1>
+<p>Some tools were listed in <a href="./resources.html#tools-and-libraries">this previous page</a><br />
+This is a follow-up chapter that contains snippets of how to use those tools. They are not elaborate snippets, they are mostly for me... so that I can quickly remember some commands or configuration stuff.  </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="openocd"><a class="header" href="#openocd">openocd</a></h1>
+<p>The Open On-Chip Debugger (OpenOCD) is an open source software development tool which allows on-chip debugging and programming of applications via JTAG/SWD hardware interface</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="magic-and-incantations"><a class="header" href="#magic-and-incantations">Magic and Incantations</a></h1>
+<p>Kumbe there is more to OOP, Functional and procedural programming...</p>
+<h1 id="type-state-programming"><a class="header" href="#type-state-programming">Type State programming</a></h1>
+<p>Reference this page : https://docs.rust-embedded.org/book/static-guarantees/typestate-programming.html</p>
+<p>This shit is safe as hell. Organized piece of sh*.</p>
+<ul>
+<li>There is only one end state. </li>
+<li>All state operations can be clearly seen (in one place)</li>
+<li>The end state cannot be affected by the process actions</li>
+<li>Moves happen... not copies</li>
+<li>This is like a state machine to produce a instance of something</li>
+</ul>
+<p>Something like this:</p>
+<pre><pre class="playground"><code class="language-rust">pub mod foo_module {
+ #[derive(Debug)]
+ pub struct Foo {
+     inner: u32,
+ }
+
+ pub struct FooBuilder {
+     a: u32,
+     b: u32,
+ }
+
+ impl FooBuilder {
+     pub fn new(starter: u32) -&gt; Self {
+         Self {
+             a: starter,
+             b: starter,
+         }
+     }
+
+     pub fn double_a(self) -&gt; Self {
+         Self {
+             a: self.a * 2,
+             b: self.b,
+         }
+     }
+
+     pub fn into_foo(self) -&gt; Foo {
+         Foo {
+             inner: self.a + self.b,
+         }
+     }
+ }
+}
+
+fn main() {
+ let x = foo_module::FooBuilder::new(10)
+     .double_a()
+     .into_foo();
+
+ println!(&quot;{:#?}&quot;, x);
+}</code></pre></pre>
+<p>Now that we have a state diagram kind of representation, how do we ensure that the state flow is always valid?</p>
+<ol>
+<li>We can use runtime checks using if-else and switch statements. But the checks are costy.</li>
+<li>We can use struct interfaces and get compile-time checks only instead of relying on runtime checks</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><ul>
+<li></li>
+</ul>
 
                     </main>
 

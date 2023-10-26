@@ -45,3 +45,12 @@ Which domain is iteresting to you?
 - Https 
 
 
+# Discovery Book
+
+SoC == microcontroller  
+sensors ==> SoC ==> Actuators(implementors of code eg arms)  
+
+SoC != General purpose Computer(eg rasberry-Pi). SoC is more specialized, might have lesser number of componets, less cost, less resource intensive.  
+Power consumption. Most microcontrollers consume a fraction of the power of a full blown processor. For applications which run on batteries, that makes a huge difference. 
+
+
