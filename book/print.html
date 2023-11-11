@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li class="chapter-item expanded "><a href="core_beliefs.html"><strong aria-hidden="true">2.</strong> Core Beliefs</a></li><li class="chapter-item expanded "><a href="tech.html"><strong aria-hidden="true">3.</strong> Magic</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> RUST</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> WASM</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> RISCV</div></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li class="chapter-item expanded "><a href="core_beliefs.html"><strong aria-hidden="true">2.</strong> Core Beliefs</a></li><li class="chapter-item expanded "><a href="tech.html"><strong aria-hidden="true">3.</strong> Magic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systems_programming.html"><strong aria-hidden="true">3.1.</strong> Systems Programming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systems_programming_path.html"><strong aria-hidden="true">3.1.1.</strong> Learning Path</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> RUST</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> WASM</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> RISCV</div></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -151,13 +151,12 @@ A grimoire.<br />
 <h6 id="because-i-have-chosen-to-be-delusional"><a class="header" href="#because-i-have-chosen-to-be-delusional"><em>Because I have chosen to be delusional.</em></a></h6>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="core-beliefs"><a class="header" href="#core-beliefs">Core Beliefs</a></h1>
 <ol>
-<li>Antinatalism</li>
-<li>Agnostic/Atheist</li>
+<li>Voluntary Antinatalism</li>
+<li>Agnosticism</li>
 <li>Computation zealotry</li>
 <li>Rust zealotry</li>
 <li>Riscv zealotry</li>
-<li>Pursuing freedom and asserting dominance above other humans... constant superiority complex. Maybe humility lies after this stage.</li>
-<li>Chilling. Just being. </li>
+<li>Chilling. Just being. Doing nothing.</li>
 <li>Mass painless genocide just to end human suffering &amp; their endless pursuit for meaning... this is the epitome of human engineering.</li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="magic"><a class="header" href="#magic">Magic</a></h1>
@@ -188,6 +187,57 @@ WASI is a standard API for anything... let's stop this trend of using custom API
 <p>Yea, I sound like a corny-know-it-all who is suffering from the necessary Dunning-Kruger effect.<br />
 But to become a Chad, you have to be a corny cringe kid first.<br />
 Why should you be ashamed of being stupid?</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="systems-programming"><a class="header" href="#systems-programming">Systems Programming</a></h1>
+<p>Our first step is to get good at computation spells.</p>
+<p>Yea, we need to be good programmers. We need to master our swords : Rust, Wasm and Riscv.<br />
+We need to be awesome developers : Our aim is to understand different programming philosophies and embue them into our DNA and our thinking.</p>
+<p>You could say this is all about creating good abstractions and finding the best way to manipulate those abstractions.<br />
+Along this journey... we will learn :</p>
+<ol>
+<li>How to be good at functional programming too... time to stop using OOP everywhere. There is more to life now, we gotta learn what we can...open our minds more.</li>
+<li>Learn programming patterns by heart, especially patterns that are effective in concurrent environments. For example, implementing Singletons that are thread safe, developing corrupt-free routing...</li>
+<li>Good old practices : Testing, Error-handling, Documentation, Performance optimization.</li>
+</ol>
+<p>We will create an Embedded OS... let's call it HOBO OS. Because we don't care if we go homeless for the sake of magic.</p>
+<p>Hobo OS will be an OS that :</p>
+<ol>
+<li>Runs wasm modules in Ring 0 for the sake of performance. Running things in Ring 0 is scary... but the kernel itself is a carefully written wasm runtime that enforces isolation well. Plus it is capability-based system.</li>
+<li>Exposes its kernel interface as WASI prototypes. We hope WASI APIs will prevail in the future. POSIX is old and limited. Using WASI encourages portability across different domains. This is because WASI provides APIs for different domains on top of OS level APIs... for example, WASI for Neural networks, WASI for cloud... This will make the OS to be easily extensible. Using WASI has disadvantages and advantages, we will open that can of worms in later chapters... for now... &quot;trust me bro&quot;.</li>
+<li>Targets the Riscv ISA. We do not tolerate other ISAs. </li>
+<li>Can receive over the Air updates.</li>
+<li>Can use AoT, JIT and Intepreter when required.</li>
+<li>Other features will be added in the <a href="undone">full documentation of the Hobo OS</a></li>
+</ol>
+<p>In the future, Hobo OS will hopefully be ported to Tock. I highly respect the Tock OS project. Go check Tock out. Those guys have balls. Big BIG balls.</p>
+<p>Another integration would be the concepts of Sel4 and Theseus.<br />
+From Sel4, we borrow their concept of mathematically testing the kernel.<br />
+From Theseus, we borrow their compiler-based isolation techniques.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="systems-programming-learning-path"><a class="header" href="#systems-programming-learning-path">Systems Programming Learning Path</a></h1>
+<h4 id="phase-1--wasm--rust"><a class="header" href="#phase-1--wasm--rust">PHASE 1 : WASM + Rust</a></h4>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Learn Wasm itself by reading the Official specs and the book by Kevin Hoffman.</li>
+<li><input disabled="" type="checkbox"/>
+Use wasm in a no-std environment. Preferably on a Rasp-Berry pi</li>
+<li><input disabled="" type="checkbox"/>
+Write a small wasm runtime</li>
+<li><input disabled="" type="checkbox"/>
+Contribute to embedded-wasm projects... find some friends</li>
+</ul>
+<h4 id="phase-2-"><a class="header" href="#phase-2-">PHASE 2 :</a></h4>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Implement and Document Hobo OS</li>
+<li><input disabled="" type="checkbox"/>
+Integrate Hobo OS into Tock</li>
+<li><input disabled="" type="checkbox"/>
+Mathematially acertain the Kernel's purity</li>
+</ul>
+<h4 id="phase-3-"><a class="header" href="#phase-3-">PHASE 3 :</a></h4>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Learn IoT stuff : implement a project based on the Rust stack</li>
+</ul>
 
                     </main>
 
