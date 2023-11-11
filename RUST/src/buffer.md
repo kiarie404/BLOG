@@ -11,6 +11,8 @@
 - Rust concurrency
 - Rust wasm integration
 - rust 
+- Learn Clippy
+- Offline Rust
 
 
 
@@ -22,3 +24,10 @@
 - DSAs
 - server
 - Concurent code
+
+
+
+## Contributions
+- Rust Comm
+- Aero Rust
+- Embedded Rust
