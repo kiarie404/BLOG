@@ -1,6 +1,6 @@
 # Intro
 
-This is not a blog. It's more of a journal. A continuous tome for becoming a mage.  
+This is not a blog. It's more of a journal.   
 
 
 
@@ -11,7 +11,7 @@ A grimoire.
 
 
 **Skeptism is HIGHLY encouraged.**  
-###### *Because I have chosen to be delusional.*
+###### *I have chosen to be delusional.*
 
 
 
