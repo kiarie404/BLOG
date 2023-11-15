@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>WASM ROUGH NOTES - GRIMOIRE</title>
+        <title>wasm execution - WASM STUFF</title>
 
 
         <!-- Custom HTML head -->
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li class="chapter-item expanded "><a href="core_beliefs.html"><strong aria-hidden="true">2.</strong> Core Beliefs</a></li><li class="chapter-item expanded "><a href="tech.html"><strong aria-hidden="true">3.</strong> Magic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systems_programming.html"><strong aria-hidden="true">3.1.</strong> Systems Programming</a></li><li class="chapter-item expanded "><a href="systems_programming_path.html"><strong aria-hidden="true">3.2.</strong> Systems Programming Learning Path</a></li></ol></li><li class="chapter-item expanded "><a href="rust_short_notes.html"><strong aria-hidden="true">4.</strong> RUST ROUGH NOTES</a></li><li class="chapter-item expanded "><a href="wasm_short_notes.html" class="active"><strong aria-hidden="true">5.</strong> WASM ROUGH NOTES</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> RISCV</div></li><li class="chapter-item expanded "><a href="log.html"><strong aria-hidden="true">7.</strong> LOG</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="wasm_in_the_browser.html"><strong aria-hidden="true">7.1.</strong> wasm in the browser</a></li><li class="chapter-item expanded "><a href="open_source.html"><strong aria-hidden="true">7.2.</strong> Why openSource ideas?</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Resources</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> People</div></li><li class="chapter-item expanded "><a href="books_and_blogs.html"><strong aria-hidden="true">2.</strong> Books</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Blogs</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Papers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Communities</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Projects</div></li><li class="chapter-item expanded affix "><li class="part-title">Notes</li><li class="chapter-item expanded "><a href="wasm_specs.html"><strong aria-hidden="true">7.</strong> wasm specs</a></li><li class="chapter-item expanded "><a href="wasm_validation.html"><strong aria-hidden="true">8.</strong> wasm validation</a></li><li class="chapter-item expanded "><a href="wasm_execution.html" class="active"><strong aria-hidden="true">9.</strong> wasm execution</a></li><li class="chapter-item expanded "><a href="wasmi_runtime.html"><strong aria-hidden="true">10.</strong> wasmi runtime</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -109,7 +109,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">GRIMOIRE</h1>
+                    <h1 class="menu-title">WASM STUFF</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -141,23 +141,32 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="wasm"><a class="header" href="#wasm">WASM</a></h1>
-<p>This segment contains :</p>
-<ol>
-<li>Technical rough notes on things to do with wasm and its different runtimes.</li>
-<li>Quick links to important documentation &amp; learning resources, people and communities</li>
-</ol>
-<p>To visit this segment, follow <a href="../WASM_NOTES/book/index.html">this link.</a></p>
+                        <h1 id="wasm-execution"><a class="header" href="#wasm-execution">Wasm Execution</a></h1>
+<p>Wasm code gets executed under either of the 2 circumstances below:
+1. During instantiation (only if the module contains a start function)
+2. When the host invokes a function that had been exported by the wasm module.</p>
+<p>Execution behavior is defined in terms of an abstract machine that models the <strong>program state</strong>.<br />
+The program state is abstracted by 2 representations : A <strong>stack</strong> and a <strong>store</strong>.</p>
+<p>The <strong>stack</strong> records operand values and control constructs. (To me, this is like the RAM of the Machine)
+The <strong>store</strong> contains global state. ie [undone] all values. I mean ALL values related to the wasm module. (To me this is like the a constantly updated Hard-disk, it contains all the values that are listed in the stack + other values that may get added to the stack in the future)</p>
+<p>For each instruction contained in the wasm code, there is a rule that specifies the effect of its execution on the program state. The execution rules assume that the stack is implicit; this is because it is assumed that the type system can calculate the max depth needed at compile time.</p>
+<p><strong>The store</strong> represents all global state that can be manipulated by WebAssembly programs. It consists of the runtime
+representation of all instances of functions, tables, memories, and globals, element segments, and data segments
+that have been allocated during the life time of the abstract machine</p>
+<p>A <strong>module instance</strong> is the runtime representation of a module. It is created by instantiating a module, and collects
+runtime representations of all entities that are imported, defined, or exported by the module.</p>
+<p>Then from the module instance we have component instances of things like : memory instance, global instance, function instance... you get the vibe.</p>
+<p>You can read of the implementation specs in the docs... ignore the formal notations if you wanna, it won't affect your conceptual understanding of the docs.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="rust_short_notes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="wasm_validation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="log.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="wasmi_runtime.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -167,11 +176,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="rust_short_notes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="wasm_validation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="log.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="wasmi_runtime.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

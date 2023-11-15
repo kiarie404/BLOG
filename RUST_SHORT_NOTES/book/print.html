@@ -239,7 +239,9 @@ fn main(){
     println!(&quot;e source error = {}&quot;, e.source().unwrap());
 }</code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="file-handling-in-rust"><a class="header" href="#file-handling-in-rust">File Handling in Rust</a></h1>
-<p>Reference --&gt;  std::fs documentation</p>
+<p>Reference --&gt;  std::fs documentation<br />
+This notes do not cover OS-specific file_manipulation operations.</p>
+<h2 id="files"><a class="header" href="#files">Files</a></h2>
 <p>Directory's components can be represented as an Iterator full of (File/Folder) abstractions called DirEntry</p>
 <h2 id="dealing-with-directories"><a class="header" href="#dealing-with-directories">Dealing with Directories</a></h2>
 <p>The Entries of a Directory/Folder are stored in an Iterator called ReadDir. 
@@ -285,7 +287,8 @@ Some performance profiling results include :</p>
 <h2 id="error-handling"><a class="header" href="#error-handling">Error handling</a></h2>
 <ul>
 <li>Return Results that have the same Mother &lt;Ok, Err&lt;my_library::mod_1_error&gt;&gt;</li>
-<li>Make the error impl the Error trait</li>
+<li>Make the library errors impl the Error trait</li>
+<li>Make the errors to be under an enum that encompases all submodules. A good example is the wasmi::Error enum. Check how that crate has implemented its error handling</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="dark-magic"><a class="header" href="#dark-magic">Dark Magic</a></h1>
 <p>There are concepts in Rust that are so elusive to me. This are things that no matter how much I read about them, my head doesn't get a thing.</p>

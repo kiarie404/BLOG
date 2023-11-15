@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>WASM ROUGH NOTES - GRIMOIRE</title>
+        <title>wasm validation - WASM STUFF</title>
 
 
         <!-- Custom HTML head -->
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li class="chapter-item expanded "><a href="core_beliefs.html"><strong aria-hidden="true">2.</strong> Core Beliefs</a></li><li class="chapter-item expanded "><a href="tech.html"><strong aria-hidden="true">3.</strong> Magic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systems_programming.html"><strong aria-hidden="true">3.1.</strong> Systems Programming</a></li><li class="chapter-item expanded "><a href="systems_programming_path.html"><strong aria-hidden="true">3.2.</strong> Systems Programming Learning Path</a></li></ol></li><li class="chapter-item expanded "><a href="rust_short_notes.html"><strong aria-hidden="true">4.</strong> RUST ROUGH NOTES</a></li><li class="chapter-item expanded "><a href="wasm_short_notes.html" class="active"><strong aria-hidden="true">5.</strong> WASM ROUGH NOTES</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> RISCV</div></li><li class="chapter-item expanded "><a href="log.html"><strong aria-hidden="true">7.</strong> LOG</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="wasm_in_the_browser.html"><strong aria-hidden="true">7.1.</strong> wasm in the browser</a></li><li class="chapter-item expanded "><a href="open_source.html"><strong aria-hidden="true">7.2.</strong> Why openSource ideas?</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Resources</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> People</div></li><li class="chapter-item expanded "><a href="books_and_blogs.html"><strong aria-hidden="true">2.</strong> Books</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Blogs</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Papers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Communities</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Projects</div></li><li class="chapter-item expanded affix "><li class="part-title">Notes</li><li class="chapter-item expanded "><a href="wasm_specs.html"><strong aria-hidden="true">7.</strong> wasm specs</a></li><li class="chapter-item expanded "><a href="wasm_validation.html" class="active"><strong aria-hidden="true">8.</strong> wasm validation</a></li><li class="chapter-item expanded "><a href="wasm_execution.html"><strong aria-hidden="true">9.</strong> wasm execution</a></li><li class="chapter-item expanded "><a href="wasmi_runtime.html"><strong aria-hidden="true">10.</strong> wasmi runtime</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -109,7 +109,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">GRIMOIRE</h1>
+                    <h1 class="menu-title">WASM STUFF</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -141,23 +141,36 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="wasm"><a class="header" href="#wasm">WASM</a></h1>
-<p>This segment contains :</p>
-<ol>
-<li>Technical rough notes on things to do with wasm and its different runtimes.</li>
-<li>Quick links to important documentation &amp; learning resources, people and communities</li>
-</ol>
-<p>To visit this segment, follow <a href="../WASM_NOTES/book/index.html">this link.</a></p>
+                        <h1 id="wasm-validation"><a class="header" href="#wasm-validation">Wasm validation</a></h1>
+<p>These are rough notes I took while reading the 'Validation' chapter in the official wasm specifications.<br />
+If you want to understand the validation process, it is better to read the chapter itself because it is more structured.</p>
+<p>Validation is the process of making sure that the wasm module follows the language specifications. It does this by representing the wasm module as an abstract syntax tree and validating it. </p>
+<h3 id="what-needs-to-be-validated"><a class="header" href="#what-needs-to-be-validated">What needs to be validated?</a></h3>
+<p>Here are some of the validation checkpoints </p>
+<h4 id="1-type-validation"><a class="header" href="#1-type-validation">1. Type validation</a></h4>
+<ul>
+<li>Are their unknown types?</li>
+<li>Are the limits set for things valid?</li>
+<li>[not a check] Block types are converted to function types for easy processing. </li>
+</ul>
+<h4 id="2-instruction-validation"><a class="header" href="#2-instruction-validation">2. Instruction validation</a></h4>
+<ul>
+<li>Checks that the order of instructions make sense... </li>
+<li>Checks that the insructions themselves adhere to their signatures. eg i32.add f64 i32 is messed up.</li>
+</ul>
+<h4 id="3-module-validation"><a class="header" href="#3-module-validation">3. Module validation</a></h4>
+<p>A module is entirely closed, that is, its components can only refer to definitions that appear in the module itself. That is if it does not import anything.</p>
+<p>During validation, the module is checked it contains valid components ONLY eg valid imports, exports, types, mems, data_segments, element_segments, tables, globals, locals, references, functions...</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="rust_short_notes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="wasm_specs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="log.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="wasm_execution.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -167,11 +180,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="rust_short_notes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="wasm_specs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="log.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="wasm_execution.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
