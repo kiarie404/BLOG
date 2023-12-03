@@ -15,9 +15,20 @@ The **store** contains global state. ie [undone] all values. I mean ALL values r
 
 For each instruction contained in the wasm code, there is a rule that specifies the effect of its execution on the program state. The execution rules assume that the stack is implicit; this is because it is assumed that the type system can calculate the max depth needed at compile time.  
 
-**The store** represents all global state that can be manipulated by WebAssembly programs. It consists of the runtime
-representation of all instances of functions, tables, memories, and globals, element segments, and data segments
-that have been allocated during the life time of the abstract machine
+**The store** represents all global state that can be manipulated by WebAssembly programs. It consists of the runtime representation of all instances of functions, tables, memories, and globals, element segments, and data segments that have been allocated during the life time of the abstract machine.
+
+Here is a struct that demonstrates a store :
+```rust
+store ::=
+{ 
+    funcs : vec<func_instance> ,
+    tables : vec<table_instance> ,
+    mems : vec<mem_instance> ,
+    globals : vec<global_instance> ,
+    elems : vec<elem_instance> ,
+    datas : vec<data_instance>
+}
+```
 
 A **module instance** is the runtime representation of a module. It is created by instantiating a module, and collects
 runtime representations of all entities that are imported, defined, or exported by the module.  

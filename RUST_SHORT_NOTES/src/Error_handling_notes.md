@@ -26,7 +26,7 @@ The functions that automatically get provided by the Error trait are 4, only one
 
 The relevant function is source(). 
 You have hardcode your souorces across different modules.  
-Check out this exampple :
+Check out this example :
 ```rust
 use std::error::Error; // use the Error Trait
 use std::fmt::{Display, Formatter, write}; // use the Display trait. For an item to be able to implement the Error trait, it must first implement both Debug & Display traits
@@ -78,3 +78,19 @@ fn main(){
     println!("e source error = {}", e.source().unwrap());
 }
 ```
+
+
+
+## Error Message Explanations.  
+
+Trouble_shooting big prorgams is hard. Good error messages GO A LONG WAAAAYYYY. I mean...just look at the error messages that the Rust compiler provides... elegant as hell.    
+
+
+This is why the compiler requires errors to have both the DISPLAY and DEBUG traits implemented. This is where you get to shine by elaborating your error messages using code... you are given a chance to even write an entire program to just display your error message.  
+
+I prefer stating : 
+    - The possible cause(s)
+    - Possible solutions
+    - Adding GUI demo if possible (just kidding ha ha ha)
+
+You can add information such as 'which file position the error occured in' and 'which function was running?' 'which thread?'. But such info can be automatically derived from the panicInfo struct and inspecting the BACK-TRACE

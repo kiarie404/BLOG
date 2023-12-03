@@ -24,3 +24,16 @@ This is a struct that represents a wasm binary file that has been parsed and val
 pub fn new(engine: &Engine, stream: impl Read) -> Result<Self, Error>
 ```
 
+## The wasmi::Caller  
+This struct represents the context of the of the wasm scope where an external function has just been called. 
+It is only useful as an argument when defining a host function that needs to use some objects from the wasm context.    
+It is useless everywhere else...  
+The only place it gets used is when you are defining a host function that (is defined with func_wrap) AND (needs to access some data from the wasm context). Other than that, you can define functions that do not need to use the wasm context.    
+
+
+
+## The Store
+The store is a datastructure that stores all the state that is accessible to the wasm program. It consists of the runtime representation of all instances of functions, tables, memories, and globals, element segments, and data segments that have been allocated during the life time of the abstract machine.   
+
+Now, among the store's content... you can have data that was exported from the host. (it is an external Value). But there is a different kind of value... Host specific data. ds
+

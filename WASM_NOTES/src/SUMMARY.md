@@ -12,4 +12,6 @@
 - [wasm validation](./wasm_validation.md)
 - [wasm execution](./wasm_execution.md)
 - [wasmi runtime](wasmi_runtime.md)
+- [wasm component model](./wasm_component_model.md)
+- [cargo component model](./cargo_component_model.md)
 

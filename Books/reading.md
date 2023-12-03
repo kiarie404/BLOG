@@ -8,6 +8,3 @@ You will know the right vibe when you find it.
 If a book doesn't suit your feels, do not force yourself to stick to that book, go ahead and find another
 
 Ask for book recommedations from reddit.
-
-
-###
